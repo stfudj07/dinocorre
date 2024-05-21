@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1uhoe5geb4xq"]
+
+[ext_resource type="FontFile" uid="uid://dl7yey2equ6v5" path="res://fonts/retrofont.ttf" id="1_o3oe3"]
+[ext_resource type="Script" path="res://HUD/HUD.gd" id="1_w6ngx"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_w6ngx")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 41.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_o3oe3")
+theme_override_font_sizes/font_size = 24
+text = "score: 0"
+
+[node name="HighScoreLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_bottom = 21.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_o3oe3")
+theme_override_font_sizes/font_size = 24
+text = "High Score: 0"
+horizontal_alignment = 2
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -19.5
+offset_right = 108.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_o3oe3")
+theme_override_font_sizes/font_size = 24
+text = "Puchale play!"
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
