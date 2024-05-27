@@ -152,14 +152,14 @@ size = Vector2(192, 192)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31ita"]
 size = Vector2(197.063, 147.156)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["dinosaurio"]]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_mbiib")
 
 [node name="AnimatableBody2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_why61")
-animation = &"crouch"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)

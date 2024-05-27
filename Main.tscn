@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbwr2li8eno2w"]
+[gd_scene load_steps=6 format=3 uid="uid://cbwr2li8eno2w"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_73tl7"]
 [ext_resource type="PackedScene" uid="uid://cqleqpslel2o2" path="res://background/background.tscn" id="1_pnv4n"]
 [ext_resource type="PackedScene" uid="uid://dx5j62qbptc7f" path="res://dinoplayer/player.tscn" id="2_up7h2"]
 [ext_resource type="PackedScene" uid="uid://bjh0a287hmloo" path="res://floor/floor.tscn" id="3_1lgee"]
+[ext_resource type="PackedScene" uid="uid://ruh4j2qq3qid" path="res://mob/mob.tscn" id="5_ew6pr"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_73tl7")
@@ -11,10 +12,16 @@ script = ExtResource("1_73tl7")
 [node name="Background" parent="." instance=ExtResource("1_pnv4n")]
 
 [node name="Player" parent="." instance=ExtResource("2_up7h2")]
-position = Vector2(96, 524)
+position = Vector2(108, 552)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-120, -655)
+position = Vector2(592.5, -270)
 scale = Vector2(1.25, 1.25)
+limit_top = 0
+limit_bottom = 0
 
 [node name="Floor" parent="." instance=ExtResource("3_1lgee")]
+position = Vector2(-5, 18)
+
+[node name="MOB" parent="." instance=ExtResource("5_ew6pr")]
+position = Vector2(1315, 618)
